@@ -11,9 +11,6 @@ import os
 
 setup = os.getenv('setup')
 
-# osu = r"C:\Users\mokku\AppData\Local\osu!\Songs" #osuインストール先
-# install = r"C:\Users\mokku\Downloads" #ダウンロードフォルダ
-
 def main():
     osu = os.getenv('osu')
     install = os.getenv('install')
@@ -47,5 +44,4 @@ if setup != '1' :
     main()
 else :
     main()
-
 exit
