@@ -32,21 +32,19 @@ def main():
     else :
         exit
 
-if setup == '1' :
-    print('初回起動です')
+if setup != '1' :
+    print('初回起動ですファイルの初期設定をします')
     dotenv_file = dotenv.find_dotenv() #envファイル
     dotenv.set_key(dotenv_file, "setup", '1') #書き換え
 
     set_osu = input('osuインストール先:')
-    dotenv.set_key(dotenv_file, "osu", set_osu)
+    dotenv.set_key(dotenv_file, "osu", set_osu+'\Songs')
+    dotenv.set_key(dotenv_file, "osu_exe", set_osu+'\osu!.exe')
 
-    # test = os.getenv('test')
-    # set_osuexe = test + 'aiueo'
-    # print(set_osuexe)
+    set_install = input('ダウンロードフォルダ:')
+    dotenv.set_key(dotenv_file, "install", set_install)
 
-    #ここに初回起動表示
-    
-    # main()
+    main()
 else :
     main()
 
